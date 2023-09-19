@@ -153,14 +153,28 @@ console.log("Question 4")
         'PE'
       ]
     **********/
-      console.log("Question 5")
+    console.log("Question 5")
 
-  function listAllCourses(students) {
+    function listAllCourses(students) {
+
+      let uniqueCourses = []
+
+      students.forEach( student => {
+        student.courses.forEach( course => {
+          if (!uniqueCourses.includes(course))
+             uniqueCourses.push(course)
+        })
+      })
+
+      return uniqueCourses
+    }
+
+  /* function listAllCourses(students) {
 
     const uniqueCourses = Array.from(new Set(students.flatMap(obj => obj.courses)))
 
     return uniqueCourses
-  }
+  } */
 
   console.log(listAllCourses(students));
   
