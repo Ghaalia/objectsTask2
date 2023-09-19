@@ -202,8 +202,16 @@ console.log("Question 4")
     }
 
     return student
-  
   }
+
+  /* Another way 
+    function removeCourseFromStudent(student, course) {
+    
+    student.courses = student.courses.filter( x => x!=course )
+    
+    return student
+  }*/
+  
 
   console.log(removeCourseFromStudent(students[6],"Science"));
   
@@ -221,17 +229,24 @@ console.log("Question 4")
 
     console.log("Question 7")
   
-function findStudentById(studentId, students) {
+/* function findStudentById(studentId, students) {
     
 students.forEach(x => {
     if (studentId == x.id)
     console.log(x)
  })
   
-} // Function close
+} */
 
- // console.log(findStudentById(10,students));
- findStudentById(10,students)
+function findStudentById(studentId, students) {
+    
+  return students.find( x => x.id == studentId)
+
+  } 
+
+
+ console.log(findStudentById(10,students));
+ // findStudentById(10,students)
   
   console.log("\n")
   /**********
